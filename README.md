@@ -7,6 +7,9 @@ method_missing to catch every message passed. Using method_missing
 means that your objects will respond to any method regardless of
 the behavior you designed in your other related classes.
 
+By default, a BlankSlate class will define methods to return `nil` so
+you don't have to.
+
 ## Installation
 
 Add this line to your application's Gemfile:
