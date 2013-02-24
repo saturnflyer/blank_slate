@@ -6,7 +6,7 @@ require 'blank_slate/version'
 Gem::Specification.new do |gem|
   gem.name          = "blank_slate"
   gem.version       = BlankSlate::VERSION
-  gem.authors       = ["'Jim Gay'"]
+  gem.authors       = ["Jim Gay"]
   gem.email         = ["jim@saturnflyer.com"]
   gem.description   = %q{
     Create null classes based upon other classes.
