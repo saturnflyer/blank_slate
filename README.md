@@ -44,7 +44,7 @@ A common example of a null object is to use `method_missing` to return the objec
 
     GuestPresenter = BlankSlate(UserPresenter) do
       def welcome
-        "Sign-in or sign-up, cowboy!"
+        "Sign-in or sign-up, cowpoke!"
       end
     end
 
