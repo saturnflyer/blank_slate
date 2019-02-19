@@ -77,7 +77,7 @@ BlankSlate will preserve the methods of the ancestor of the inherited class.
       def name
         auth_info.to_h['name']
       end
-
+      
       def email
         auth_info.to_h['email']
       end
