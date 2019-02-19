@@ -1,6 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/spec'
-require 'blank_slate'
+require 'test_helper'
 
 include BlankSlate
 
@@ -59,6 +57,7 @@ describe "BlankSlate" do
   end
 
   it "preserves parent methods" do
+    null_object = blank_slate.new
     assert_equal null_object.inherited, 'this should be inherited'
   end
 end

@@ -1,10 +1,10 @@
 require "bundler/gem_tasks"
-require "simplecov"
+require "rake/testtask"
 
-desc "Test and run coverage"
-task :test do
-  SimpleCov.start
-  load 'test/lib/blank_slate_test.rb'
+Rake::TestTask.new(:test) do |t|
+  t.libs << "test"
+  t.libs << "lib"
+  t.test_files = FileList["test/**/*_test.rb"]
 end
 
 task :default => :test
