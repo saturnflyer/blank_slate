@@ -57,4 +57,8 @@ describe "BlankSlate" do
     null_object = blank_slate.new
     assert_respond_to null_object, :inherited
   end
+
+  it "preserves parent methods" do
+    assert_equal null_object.inherited, 'this should be inherited'
+  end
 end
