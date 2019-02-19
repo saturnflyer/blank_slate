@@ -16,9 +16,6 @@ env:
     - CC_TEST_REPORTER_ID=7cf83cb3647a2969a1af2e1bbe49155388ad3a8ff45e6b0ec9be6c1c65ea9b96
 matrix:
   allow_failures:
-    - 2.3.6
-    - 2.4.4
-    - 2.5.3
     - rvm: ruby-head
     - rvm: jruby-head
 before_script:
