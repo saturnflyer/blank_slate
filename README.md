@@ -65,7 +65,7 @@ In the example above the call to `bad_method` would have continued with a null o
 
 BlankSlate will preserve the methods of the ancestor of the inherited class.
 
-```
+```ruby
     class Visitor
       attr_reader :auth_info
       def authenticated?
