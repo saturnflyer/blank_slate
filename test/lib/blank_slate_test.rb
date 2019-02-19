@@ -5,7 +5,13 @@ require 'blank_slate'
 include BlankSlate
 
 module BlankSlate
-  class TesterClass
+  class Parent
+    def inherited
+      "this should be inherited"
+    end
+  end
+
+  class TesterClass < Parent
     def one
       "one"
     end
@@ -45,5 +51,10 @@ describe "BlankSlate" do
     end.new
 
     null_object.one.must_equal 'not the same one'
+  end
+
+  it "inherits from the provide class" do
+    null_object = blank_slate.new
+    assert_respond_to null_object, :inherited
   end
 end
