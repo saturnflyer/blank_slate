@@ -61,6 +61,46 @@ A common example of a null object is to use `method_missing` to return the objec
 
 In the example above the call to `bad_method` would have continued with a null object (using method_missing) but failed for the good object. With BlankSlate, we get the behavior we want from both our regular class and the null stand-in.
 
+### Common ancestor
+
+BlankSlate will preserve the methods of the ancestor of the inherited class.
+
+```
+    class Visitor
+      attr_reader :auth_info
+      def authenticated?
+        auth_info.to_h.has_key?('token')
+      end
+    end
+
+    class User < Visitor
+      def name
+        auth_info.to_h['name']
+      end
+
+      def email
+        auth_info.to_h['email']
+      end
+    end
+
+    class Guest < BlankSlate(Visitor)
+      def name
+        "Guest"
+      end
+    end
+
+    user = User.new
+    user.auth_info = {'name' => 'Jim', 'email' => 'test@example.com', 'credentials' => 'valid stuff' }
+    user.name #=> "Jim"
+    user.authenticated? #=> true
+
+    guest = Guest.new
+    guest.auth_info = { }
+    guest.name #=> "Guest"
+    guest.authenticated? #=> false
+
+```
+
 ## Contributing
 
 1. Fork it
