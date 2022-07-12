@@ -16,15 +16,10 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Impliment a null object without resorting to method_missing.}
   gem.homepage      = "http://github.com/saturnflyer/blank_slate"
 
-  gem.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  end
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+
+  gem.files         = Dir.glob("{exe,lib}/**/*", File::FNM_DOTMATCH) + %w[ README.md LICENSE.txt CHANGELOG.md CODE_OF_CONDUCT.md behavioral.gemspec Gemfile ]
+  gem.test_files    = Dir.glob("test/**/*", File::FNM_DOTMATCH)
   gem.bindir        = "exe"
   gem.executables   = gem.files.grep(%r{^exe/}) { |f| File.basename(f) }
   gem.require_paths = ["lib"]
-
-  gem.add_development_dependency "bundler", "~> 2.0"
-  gem.add_development_dependency "rake", "~> 13.0"
-  gem.add_development_dependency "minitest", "~> 5.0"
 end
