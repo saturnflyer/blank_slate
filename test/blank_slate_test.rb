@@ -28,7 +28,7 @@ describe "BlankSlate" do
   it "sets the values of instance methods to nil" do
     null_object = blank_slate.new
 
-    null_object.one.must_be_nil
+    _(null_object.one).must_be_nil
   end
 
   it "accepts a block to define methods on the null class" do
@@ -38,7 +38,7 @@ describe "BlankSlate" do
       end
     end.new
 
-    null_object.passed_block_method.must_equal 'this is from the method defined in the block!'
+    _(null_object.passed_block_method).must_equal 'this is from the method defined in the block!'
   end
 
   it "allows the block to override method definitions from the given class" do
@@ -48,7 +48,7 @@ describe "BlankSlate" do
       end
     end.new
 
-    null_object.one.must_equal 'not the same one'
+    _(null_object.one).must_equal 'not the same one'
   end
 
   it "inherits from the provide class" do
