@@ -1,0 +1,7 @@
+---
+- BlankSlate#test_0001_returns a class with all instance_methods of the given class
+- BlankSlate#test_0002_sets the values of instance methods to nil
+- BlankSlate#test_0003_accepts a block to define methods on the null class
+- BlankSlate#test_0004_allows the block to override method definitions from the given class
+- BlankSlate#test_0005_inherits from the provide class
+- BlankSlate#test_0006_preserves parent methods
