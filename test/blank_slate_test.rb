@@ -53,6 +53,7 @@ describe "BlankSlate" do
 
   it "inherits from the provide class" do
     null_object = blank_slate.new
+    assert_kind_of BlankSlate::TesterClass, null_object
     assert_respond_to null_object, :inherited
   end
 
