@@ -1,3 +1,7 @@
+# 1.1.3
+
+Add the ability to specify the return value on BlankSlate methods
+
 # 1.1.2
 
 Minor change to simplify the methods that are iterated when creating the BlankSlate class.

@@ -61,4 +61,9 @@ describe "BlankSlate" do
     null_object = blank_slate.new
     assert_equal null_object.inherited, 'this should be inherited'
   end
+
+  it "uses the specified default_value for the return" do
+    null_object = BlankSlate(BlankSlate::TesterClass, default_value: "blank").new
+    assert_equal "blank", null_object.one
+  end
 end
