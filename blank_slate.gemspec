@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "http://github.com/saturnflyer/blank_slate"
 
 
-  gem.files         = Dir.glob("{exe,lib}/**/*", File::FNM_DOTMATCH) + %w[ README.md LICENSE.txt CHANGELOG.md CODE_OF_CONDUCT.md behavioral.gemspec Gemfile ]
+  gem.files         = Dir.glob("lib/**/*", File::FNM_DOTMATCH) + %w[ README.md LICENSE.txt CHANGELOG.md CODE_OF_CONDUCT.md behavioral.gemspec Gemfile ]
   gem.test_files    = Dir.glob("test/**/*", File::FNM_DOTMATCH)
   gem.bindir        = "exe"
   gem.executables   = gem.files.grep(%r{^exe/}) { |f| File.basename(f) }
